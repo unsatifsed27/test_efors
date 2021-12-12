@@ -5374,12 +5374,12 @@ PATH=$(INTERNAL_USERIMAGES_BINARY_PATHS):$(dir $(ZIP2ZIP)):$$PATH \
         $(BUILT_TARGET_FILES_PACKAGE) $(1)
 endef
 
-product_name := $(subst aosp_,,$(TARGET_PRODUCT))
+product_name := $(subst cipher_,,$(TARGET_PRODUCT))
 CUSTOM_BUILD_DATE := $(shell date -u +%Y%m%d)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   product_name := $(product_name)_debug
 endif
-name := CipherOS-2.0-$(product_name)-ota-$(CUSTOM_BUILD_DATE)-$(TARGET_BUILD_VARIANT)
+name := CipherOS-3.0-$(product_name)-ota-$(CUSTOM_BUILD_DATE)-$(TARGET_BUILD_VARIANT)
 
 INTERNAL_OTA_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
 INTERNAL_OTA_METADATA := $(PRODUCT_OUT)/ota_metadata

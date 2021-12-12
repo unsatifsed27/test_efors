@@ -212,6 +212,26 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: {}".format(target_info.fingerprint))
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
+  script.Print("**************************************");
+  script.Print("             CipherOS 3.0             ");
+  script.Print("               GRAVITY                ");
+  script.Print("**************************************");
+  androidver = target_info.GetBuildProp("ro.build.version.release")
+  buildidn = target_info.GetBuildProp("ro.build.id")
+  buildday = target_info.GetBuildProp("ro.build.date")
+  securep = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("ro.product.name")
+  manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
+  script.Print("**********************************************");
+  script.Print(" Android version  : %s"%(androidver));
+  script.Print(" Security patch   : %s"%(securep));
+  script.Print(" Build date       : %s"%(buildday));
+  script.Print("**********************************************");
+  script.Print(" Device           : %s"%(device));
+  script.Print(" Manufacturer     : %s"%(manufacturer));
+  script.Print("**********************************************");
+  script.Print("                                         ");
+  
   device_specific.FullOTA_InstallBegin()
 
   # All other partitions as well as the data wipe use 10% of the progress, and
