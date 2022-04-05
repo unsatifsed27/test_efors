@@ -5379,7 +5379,7 @@ CUSTOM_BUILD_DATE := $(shell date -u +%Y%m%d)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   product_name := $(product_name)_debug
 endif
-name := CipherOS-3.0-$(product_name)-ota-$(CUSTOM_BUILD_DATE)-$(TARGET_BUILD_VARIANT)
+name := CipherOS-Sv2-$(product_name)-OTA-$(CUSTOM_BUILD_DATE)-$(TARGET_BUILD_VARIANT)
 
 INTERNAL_OTA_PACKAGE_TARGET := $(PRODUCT_OUT)/$(name).zip
 INTERNAL_OTA_METADATA := $(PRODUCT_OUT)/ota_metadata
